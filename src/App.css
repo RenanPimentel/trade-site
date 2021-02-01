@@ -1,0 +1,19 @@
+.container-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-item {
+  margin: 0 20%;
+  font-weight: lighter;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 1rem 5rem;
+  transition: all 0.2s ease;
+}
+
+.container-item h1 {
+  font-size: 2rem;
+}

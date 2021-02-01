@@ -1,0 +1,45 @@
+.navigator {
+  position: static;
+  display: flex;
+  top: 0;
+  flex: 1;
+  background: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.navigator .nav-item {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.navigator .nav-item a {
+  font-family: "Bebas Neue";
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+}
+
+.navigator .nav-item:hover a {
+  color: rgb(0, 174, 255);
+}
+
+.line {
+  margin: 1rem 0 0 0;
+  background: black;
+  border-radius: 5px;
+  bottom: 0;
+  width: 10%;
+  height: 1px;
+  transition: all 0.2s ease;
+  margin-top: 2.22rem;
+}
+
+.container-item h1 {
+  font-family: "Bebas Neue";
+}
