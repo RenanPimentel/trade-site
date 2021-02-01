@@ -11,10 +11,10 @@ function Navigator() {
 
   return (
     <nav className="navigator">
-      <div className="input-container">
+      <form className="search-form">
         <input type="text"/>
         <button>🔎</button>
-      </div>
+      </form>
       {items.map((item, index) => <NavigatorItem {...item} key={index}/>)}
     </nav>
   );

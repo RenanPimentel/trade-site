@@ -1,4 +1,4 @@
-.container-item {
+/* .container-item {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -10,10 +10,14 @@
   font-weight: lighter;
   text-decoration: none;
   text-shadow: none;
-  padding: 1rem 5rem;
+  padding: 2rem;
   transition: all 0.2s ease;
+}
+
+.container {
+  margin: 0 2rem;
 }
 
 .container-item h1 {
   font-size: 2rem;
-}
+} */
