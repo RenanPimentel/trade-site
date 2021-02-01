@@ -7,10 +7,27 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   width: 100%;
   margin-bottom: 1rem;
   border-bottom: 1px solid black;
+  flex-wrap: wrap;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.navigator input {
+  outline: none;
+}
+
+.navigator button {
+  border: none;
+  cursor: pointer;
 }
 
 .navigator .nav-item {
