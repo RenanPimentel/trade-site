@@ -10,13 +10,6 @@ function Items({ name, html }) {
     <>
     <div className="container-item" id={name}>
       <h1>{capitalize(name.replace(/-/g, ' '))}</h1>
-      {name === 'items' ?
-        <form className="search-form">
-          <input type="text"/>
-          <button type="submit">🔎</button>
-        </form> 
-        : ''
-      }
       <div className="wrapper"
         dangerouslySetInnerHTML={{__html: html}}>
       </div>
