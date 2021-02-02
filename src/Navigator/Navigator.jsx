@@ -1,6 +1,6 @@
 import './Navigator.css';
 
-import NavigatorItem from './NavigatorItem';
+import NavigatorItem from '../NavigatorItem/NavigatorItem';
 
 function Navigator() {
   const items = [
@@ -11,10 +11,6 @@ function Navigator() {
 
   return (
     <nav className="navigator">
-      <form className="search-form">
-        <input type="text"/>
-        <button>🔎</button>
-      </form>
       {items.map((item, index) => <NavigatorItem {...item} key={index}/>)}
     </nav>
   );
