@@ -5,19 +5,37 @@ import { useState, useEffect } from 'react';
 function ItemsPage() {
   const [inputValue, setInputValue] = useState('');
   const [skins, setSkins] = useState();
-
+  
   useEffect(() => filterSkins(inputValue), [inputValue]);
-
-  const filterSkins = name => setSkins(
-    items.filter(item => item.name.includes(name))
-    .map(item => `
-      <div class="trade-item">
-        <img src="${item.img}" alt="${item.name} image"></img>
-        <div class="item">${item.name}</div>
-        <button class="add-to-cart-btn">+ Add to Cart</button>
-      </div>
-    `).join('')
+  
+  const addToCart = tradeItem => {
+    const toAddItem = items.find(item => 
+      item.name === tradeItem.querySelector('.item-name').textContent);
+    console.log(toAddItem);
+    return toAddItem;
+  };
+  
+  const filterSkins = input => {
+    // const regex = new RegExp(name, 'gi');
+    
+    setSkins(items
+      .filter(item => item.name.includes(input))
+      .map((item, index) =>
+        <div className="trade-item" key={index}>
+          <img src={item.img} alt={item.name + ' image'}></img>
+          <div className="item">
+            <p className="item-name"
+              dangerouslySetInnerHTML={{ __html: input ? item.name.replace(input, `<span style="background: red">${input}</span>`) : item.name }}>
+            </p>
+          </div>
+          <button 
+            className="add-to-cart-btn"
+            onClick={e => addToCart(e.target.parentElement)}
+          >+ Add to Cart</button>
+        </div>
+      )
     );
+  }
 
   return (
     <>
@@ -29,8 +47,8 @@ function ItemsPage() {
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
       />
-      <div className="wrapper"
-        dangerouslySetInnerHTML={{__html: skins}}>
+      <div className="wrapper">
+        {skins}
       </div>
       <div className="line"></div>
     </div>
