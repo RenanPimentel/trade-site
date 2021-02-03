@@ -25,7 +25,7 @@ function ItemsPage() {
           <img src={item.img} alt={item.name + ' image'}></img>
           <div className="item">
             <p className="item-name"
-              dangerouslySetInnerHTML={{ __html: input ? item.name.replace(input, `<span style="background: red">${input}</span>`) : item.name }}>
+              dangerouslySetInnerHTML={{ __html: input ? item.name.replace(input, `<span style="background: yellow">${input}</span>`) : item.name }}>
             </p>
           </div>
           <button 
