@@ -1,0 +1,10 @@
+.navigator .nav-item a {
+  font-family: "Bebas Neue";
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+}
+
+.navigator .nav-item:hover a {
+  color: rgb(0, 174, 255);
+}

@@ -1,64 +1,16 @@
-/* .navigator {
+.navigator {
   position: static;
-  display: flex;
   top: 0;
+  display: flex;
   flex: 1;
   background: white;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background: #aaa;
+  background: #bbb;
   padding: 1.5rem 0;
   width: 100%;
   margin-bottom: 1rem;
   border-bottom: 1px solid black;
   flex-wrap: wrap;
 }
-
-.input-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-}
-
-.navigator input {
-  outline: none;
-}
-
-.navigator button {
-  border: none;
-  background: #aaa;
-  cursor: pointer;
-}
-
-.navigator .nav-item {
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.navigator .nav-item a {
-  font-family: "Bebas Neue";
-  text-decoration: none;
-  font-size: 1.3rem;
-  transition: all 0.2s ease;
-}
-
-.navigator .nav-item:hover a {
-  color: rgb(0, 174, 255);
-}
-
-.line {
-  margin: 1rem 0 0 0;
-  background: black;
-  border-radius: 5px;
-  bottom: 0;
-  width: 10%;
-  height: 1px;
-  transition: all 0.2s ease;
-  margin-top: 2.22rem;
-}
-
-.container-item h1 {
-  font-family: "Bebas Neue";
-} */

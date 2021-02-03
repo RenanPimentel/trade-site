@@ -1,26 +1,32 @@
 [
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915600174055445/interstellar.png",
-    "name": "interstellar titanium white"
+    "name": "interstellar titanium white",
+    "category": "decal"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915741378445342/zomba.png",
-    "name": "zomba titanium white"
+    "name": "zomba titanium white",
+    "category": "wheel"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915825168711690/fennec.png",
-    "name": "fennec"
+    "name": "fennec",
+    "category": "car"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915887562391592/mainframe.png",
-    "name": "mainframe"
+    "name": "mainframe",
+    "category": "decal"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805916041704112148/dissolver.png",
-    "name": "dissolver"
+    "name": "dissolver",
+    "category": "decal"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805916101326143568/stipple_gait.png",
-    "name": "stipple gait"
+    "name": "stipple gait",
+    "category": "decal"
   }
 ]

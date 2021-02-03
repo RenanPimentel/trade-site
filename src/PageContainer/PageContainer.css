@@ -1,0 +1,25 @@
+.line {
+  margin: 1rem 0;
+  background: black;
+  width: 10%;
+  height: 1px;
+}
+
+.container-item h1 {
+  font-family: "Bebas Neue";
+}
+
+.container-item p {
+  width: 10rem;
+}
+
+.container-item {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.add-to-cart-btn {
+  min-width: 5rem;
+  padding: 1rem .75rem;
+}

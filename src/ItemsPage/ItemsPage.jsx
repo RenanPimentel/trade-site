@@ -1,5 +1,6 @@
-import items from '../items.json';
+import './ItemsPage.css';
 
+import items from '../items.json';
 import { useState, useEffect } from 'react';
 
 function ItemsPage() {
@@ -16,14 +17,15 @@ function ItemsPage() {
   };
   
   const filterSkins = input => {
-    // const regex = new RegExp(name, 'gi');
-    
     setSkins(items
       .filter(item => item.name.includes(input))
       .map((item, index) =>
         <div className="trade-item" key={index}>
           <img src={item.img} alt={item.name + ' image'}></img>
           <div className="item">
+            <p className="item-class">
+              {item.category}
+            </p>
             <p className="item-name"
               dangerouslySetInnerHTML={{ __html: input ? item.name.replace(input, `<span style="background: yellow">${input}</span>`) : item.name }}>
             </p>

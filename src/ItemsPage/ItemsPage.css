@@ -1,0 +1,10 @@
+.trade-item {
+  display: flex;
+  align-items: center;
+  margin: .5rem;
+}
+
+.trade-item p {
+  text-align: center;
+  margin: 1rem;
+}

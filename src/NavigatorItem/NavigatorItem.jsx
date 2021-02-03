@@ -1,3 +1,5 @@
+import './NavigatorItem.css';
+
 function NavigatorItem({ name, href }) {
   return (
     <div className="nav-item">
