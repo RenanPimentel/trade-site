@@ -18,19 +18,21 @@ function ItemsPage() {
   
   const filterSkins = input => {
     setSkins(items
-      .filter(item => item.name.includes(input))
-      .map((item, index) =>
+      .filter(item => item.name.includes(input) || item.category.includes(input))
+      .map(({ name, img, category }, index) =>
         <div className="trade-item" key={index}>
-          <img src={item.img} alt={item.name + ' image'}></img>
+          <img 
+            onClick={e => addToCart(e.target.parentElement)}
+            src={img} 
+            alt={name + ' image'} 
+            title={`${name} (${category})`}></img>
           <div className="item">
-            <p className="item-name"
-              dangerouslySetInnerHTML={{ __html: input ? item.name.replace(input, `<span style="background: yellow">${input}</span>`) : item.name }}>
+            <p className="item-name" style={{ display: 'none' }}
+              dangerouslySetInnerHTML={{ __html: input 
+                ? name.replace(input, `<span style="background: yellow">${input}</span>`)
+                : name }}>
             </p>
           </div>
-          <button 
-            className="add-to-cart-btn"
-            onClick={e => addToCart(e.target.parentElement)}
-          >+</button>
         </div>
       )
     );
@@ -40,16 +42,22 @@ function ItemsPage() {
     <>
     <div className="container-item">
       <h1>Items</h1>
-      <input
-        placeholder="filter skins"
-        type="text"
-        value={inputValue}
-        onChange={e => setInputValue(e.target.value)}
-      />
+      <div className="filters">
+        <input
+          placeholder="filter skins"
+          type="text"
+          value={inputValue}
+          onChange={e => setInputValue(e.target.value)}
+        />
+        <div className="btn-filters">
+        <button>carro</button>
+        <button>carro</button>
+        <button>carro</button>
+        </div>
+      </div>
       <div className="wrapper">
         {skins}
       </div>
-      <div className="line"></div>
     </div>
     </>
   );

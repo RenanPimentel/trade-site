@@ -30,8 +30,9 @@
 }
 
 .container {
+  margin-top: 20rem;
   margin: 0 5rem;
   padding-top: 2rem;
   border-radius: 2.5rem;
-  background: rgba(49, 52, 63, 0.9);
+  background: #4e5562;
 }

@@ -3,13 +3,13 @@
   top: 0;
   display: flex;
   flex: 1;
-  background: rgba(49, 52, 63, 0.9);
+  background: #454852;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   width: 100%;
   margin-bottom: 20rem;
-  box-shadow: 0 10px 100px black;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
   flex-wrap: wrap;
 }
