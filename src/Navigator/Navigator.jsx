@@ -4,9 +4,9 @@ import NavigatorItem from '../NavigatorItem/NavigatorItem';
 import Cart from '../Cart/Cart';
 
 const items = [
-  { name: 'Items', href: '#items' },
-  { name: 'Discord', href: '#discord' },
-  { name: 'About us', href: '#about-us' }
+  { name: 'Itens', href: '#items' },
+  { name: 'Contato', href: '#discord' },
+  { name: 'Sobre nós', href: '#about-us' }
 ];
 
 
@@ -15,7 +15,12 @@ function Navigator() {
   
   return (
     <nav className="navigator">
-      {items.map((item, index) => <NavigatorItem {...item} key={index}/>)}
+      <div className="logo">
+        logo
+      </div>
+      <div className="nav-items">
+        {items.map((item, index) => <NavigatorItem {...item} key={index}/>)}
+      </div>
       <Cart cartItems={cartItems} />
     </nav>
   );

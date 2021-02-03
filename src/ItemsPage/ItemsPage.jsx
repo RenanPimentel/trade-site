@@ -23,9 +23,6 @@ function ItemsPage() {
         <div className="trade-item" key={index}>
           <img src={item.img} alt={item.name + ' image'}></img>
           <div className="item">
-            <p className="item-class">
-              {item.category}
-            </p>
             <p className="item-name"
               dangerouslySetInnerHTML={{ __html: input ? item.name.replace(input, `<span style="background: yellow">${input}</span>`) : item.name }}>
             </p>
@@ -33,7 +30,7 @@ function ItemsPage() {
           <button 
             className="add-to-cart-btn"
             onClick={e => addToCart(e.target.parentElement)}
-          >+ Add to Cart</button>
+          >+</button>
         </div>
       )
     );

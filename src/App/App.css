@@ -14,10 +14,24 @@
   transition: all 0.2s ease;
 }
 
-.container {
-  margin: 0 2rem;
-}
-
 .container-item h1 {
   font-size: 2rem;
+}
+
+.container-item input {
+  outline: none;
+  width: 30%;
+  min-width: 20rem;
+  color: black;
+}
+
+.item-name {
+  color: black;
+}
+
+.container {
+  margin: 0 5rem;
+  padding-top: 2rem;
+  border-radius: 2.5rem;
+  background: rgba(49, 52, 63, 0.9);
 }

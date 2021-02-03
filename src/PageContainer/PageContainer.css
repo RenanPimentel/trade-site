@@ -7,19 +7,15 @@
 
 .container-item h1 {
   font-family: "Bebas Neue";
+  text-align: center;
 }
 
 .container-item p {
+  text-align: center;
   width: 10rem;
 }
 
 .container-item {
   margin: 0;
   padding: 0;
-  display: block;
-}
-
-.add-to-cart-btn {
-  min-width: 5rem;
-  padding: 1rem .75rem;
 }
