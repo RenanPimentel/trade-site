@@ -14,6 +14,7 @@ function ItemsPage() {
       <div class="trade-item">
         <img src="${item.img}" alt="${item.name} image"></img>
         <div class="item">${item.name}</div>
+        <button class="add-to-cart-btn">+ Add to Cart</button>
       </div>
     `).join('')
     );
@@ -21,16 +22,13 @@ function ItemsPage() {
   return (
     <>
     <div className="container-item">
-      <form className="search-form">
-        <input
-          placeholder="filter skins"
-          type="text"
-          value={inputValue}
-          onChange={e => setInputValue(e.target.value)}
-        />
-        <button type="submit">🔎</button>
-      </form>
-
+      <h1>Items</h1>
+      <input
+        placeholder="filter skins"
+        type="text"
+        value={inputValue}
+        onChange={e => setInputValue(e.target.value)}
+      />
       <div className="wrapper"
         dangerouslySetInnerHTML={{__html: skins}}>
       </div>
