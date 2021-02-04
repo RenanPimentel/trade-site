@@ -4,30 +4,37 @@
   flex-direction: column;
   margin: 2px;
   background: white;
-  border-radius: 20px;
-  padding: 0.5rem;
-  padding-bottom: 1rem;
-  transition: all 0.4s cubic-bezier(0.165, 1.84, 0.44, 1);
+  border-radius: 10px;
+  padding: 1px;
+  /* justify-content: center; */
+  /* padding-bottom: .5rem; */
+  transition: all 0.4s ease;
+}
+
+label {
+  background: #7b829a;
+  margin: 0 1rem;
+  padding: .5rem;
+}
+
+input[type="checkbox"] {
+  display: none;
 }
 
 .trade-item img {
-  transition: all 0.4s cubic-bezier(0.15, 2.8, 1, 1);
-  border-radius: 20px;
-}
-
-.trade-item:hover img {
-  transform: scale(1.1);
+  transition: all 0.4s ease;
+  border-radius: 10px;
 }
 
 .trade-item:hover {
-  background: #424651;
+  background: #ccc;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 1.5rem;
-  align-items: center;
+  margin: 1.5rem;
+  align-items: stretch;
   justify-content: center;
   text-align: center;
 }
@@ -38,7 +45,8 @@
 }
 
 .container-item img {
-  width: 5rem;
+  width: 5.5rem;
+  /* height: 6.5rem; */
   cursor: pointer;
 }
 
@@ -67,6 +75,14 @@ button {
 .btn-filters {
   display: flex;
   flex-wrap: nowrap;
+}
+
+label {
+  z-index: 10;
+}
+
+.active {
+  background: red;
 }
 
 .btn-filters button {

@@ -5,6 +5,11 @@ function Cart({ cart, setCart }) {
     e.target.parentElement.classList.toggle('active');
   };
 
+  const removeCartItem = name => {
+    const index = cart.findIndex(skin => skin.name === name);
+    setCart(cart.splice(index, 1));
+  };
+
   return (
     <>
     <div className="cart">

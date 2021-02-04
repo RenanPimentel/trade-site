@@ -6,7 +6,7 @@ import PageContainer from '../PageContainer/PageContainer';
 import { useState } from 'react';
 
 function App() {
-  const [skins, setSkins] = useState();
+  const [skins, setSkins] = useState([]);
   const items = [
     { name: 'Itens', href: '#itens' },
     { name: 'Contato', href: '#contato' },
@@ -29,7 +29,7 @@ function App() {
   const filterSkins = input => {
     setSkins(itemsJson
       .filter(({ name, category }) => 
-      name.includes(input.trim()) || category.includes(input.trim()))
+        name.includes(input.trim()) || category.includes(input.trim()))
       .map(({ name, img, category }, index) =>
       <div 
         key={index}
@@ -51,11 +51,12 @@ function App() {
       </div>
     ));
   };
-
+  
+  const pageContainerProps = { items, skins, filterSkins };
   return (
     <>
-      <Navigator items={items} cart={cart} setCart={setCart} filterSkins={filterSkins} addToCart={addToCart} skins={skins} />
-      <PageContainer items={items} skins={skins} filterSkins={filterSkins} addToCart={addToCart} />
+      <Navigator cart={cart} setCart={setCart} {...pageContainerProps} />
+      <PageContainer {...pageContainerProps} sentToCart={sentToCart} setSkins={setSkins} addToCart={addToCart} />
     </>
   );
 }

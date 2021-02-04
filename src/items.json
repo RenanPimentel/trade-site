@@ -2,7 +2,7 @@
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915600174055445/interstellar.png",
     "name": "interstellar titanium white",
-    "category": "decal"
+    "category": "adesivo"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915741378445342/zomba.png",
@@ -17,16 +17,21 @@
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805915887562391592/mainframe.png",
     "name": "mainframe",
-    "category": "decal"
+    "category": "adesivo"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805916041704112148/dissolver.png",
     "name": "dissolver",
-    "category": "decal"
+    "category": "adesivo"
   },
   {
     "img": "https://cdn.discordapp.com/attachments/805910584369217536/805916101326143568/stipple_gait.png",
     "name": "stipple gait",
-    "category": "decal"
+    "category": "adesivo"
+  },
+  {
+    "img": "https://cdn.discordapp.com/attachments/805910584369217536/806883315332153384/unknown.png",
+    "name": "electroshock",
+    "category": "gol"
   }
 ]
