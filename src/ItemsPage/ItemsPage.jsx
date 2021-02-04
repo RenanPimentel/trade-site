@@ -1,43 +1,24 @@
 import './ItemsPage.css';
-
-import itemsJson from '../items.json';
-
 import { useState, useEffect } from 'react';
 
-function ItemsPage({ filterSkins, skins, setSkins, addToCart, sentToCart }) {
+import itemsFromJson from '../items.json';
+const itemsJson = itemsFromJson
+  .sort((a, b) => a.category > b.category ? 1 : -1);
+
+function ItemsPage({ skins, setSkins, addToCart, sentToCart }) {
   const [inputValue, setInputValue] = useState('');
   
   useEffect(() => filterSkins(inputValue), [inputValue]);
 
-  const filterAllSkins = values => {
-    if (!values.length) {
-      setSkins(itemsJson
-        .map(({ name, img, category }, index) =>
-      <div 
-        key={index}
-        className="trade-item" 
-        onClick={() => sentToCart(name)}
-      >
-        <img 
-          onClick={e => addToCart(e.target.parentElement)}
-          src={img} 
-          alt={name + ' image'}
-          title={`${name} (${category})`}></img>
-        <div className="item">
-          <p className="item-name" style={{ display: 'none' }}
-            dangerouslySetInnerHTML={{ __html: values[index] 
-              ? name.replace(values[index], `<span style="background: yellow">${values[index]}</span>`)
-              : name }}>
-          </p>
-        </div>
-      </div>
-    ));
-      return;
-    }
+  const filterSkins = input => {
+    const filtersLabel = [...document.querySelectorAll('label.active')]
 
-    setSkins(
-      itemsJson
-      .filter(item => values.includes(item.name) || values.includes(item.category))
+    setSkins(itemsJson
+      .filter(item => filtersLabel.length 
+        ? filtersLabel.map(filter => filter.textContent).includes(item.category)
+        : true)
+      .filter(({ name, category }) => 
+        name.includes(input.trim()) || category.includes(input.trim()))
       .map(({ name, img, category }, index) =>
       <div 
         key={index}
@@ -51,8 +32,9 @@ function ItemsPage({ filterSkins, skins, setSkins, addToCart, sentToCart }) {
           title={`${name} (${category})`}></img>
         <div className="item">
           <p className="item-name" style={{ display: 'none' }}
-            dangerouslySetInnerHTML={{ __html: values[index] 
-              ? name.replace(values[index], `<span style="background: yellow">${values[index]}</span>`)
+            dangerouslySetInnerHTML={{ __html: input 
+              ? name.replace(input, 
+                `<span style="background: yellow">${input}</span>`)
               : name }}>
           </p>
         </div>
@@ -60,10 +42,69 @@ function ItemsPage({ filterSkins, skins, setSkins, addToCart, sentToCart }) {
     ));
   };
 
+  const filterAllSkins = values => {
+    if (!values.length) {
+      setSkins(itemsJson
+        .filter(item => item.name.includes(inputValue)
+          || item.category.includes(inputValue))
+        .map(({ name, img, category }, i) =>
+          <div 
+            key={i}
+            className="trade-item" 
+            onClick={() => sentToCart(name)}
+          >
+            <img 
+              onClick={e => addToCart(e.target.parentElement)}
+              src={img} 
+              alt={name + ' image'}
+              title={`${name} (${category})`}></img>
+            <div className="item">
+              <p className="item-name" style={{ display: 'none' }}
+                dangerouslySetInnerHTML={{ __html: values[i] 
+                  ? name.replace(values[i], 
+                      `<span style="background: yellow">${values[i]}</span>`)
+                  : name }}>
+              </p>
+            </div>
+          </div>
+      ));
+      return;
+    }
+
+    setSkins(
+      itemsJson
+      .filter(item => item.name.includes(inputValue) 
+        || item.category.includes(inputValue))
+      .filter(item => values.includes(item.name)
+        || values.includes(item.category))
+      .map(({ name, img, category }, index) =>
+        <div 
+          key={index}
+          className="trade-item" 
+          onClick={() => sentToCart(name)}
+        >
+          <img 
+            onClick={e => addToCart(e.target.parentElement)}
+            src={img} 
+            alt={name + ' image'}
+            title={`${name} (${category})`}></img>
+          <div className="item">
+            <p className="item-name" style={{ display: 'none' }}
+              dangerouslySetInnerHTML={{ __html: values[index] 
+                ? name.replace(values[index], 
+                    `<span style="background: yellow">${values[index]}</span>`)
+                : name }}>
+            </p>
+          </div>
+      </div>
+    ));
+  };
+
   const handleInputChange = () => {
     const filters = [...document.querySelectorAll('.filter-input')];
     const filtersActive = filters.filter(filter => filter.checked);
-    filterAllSkins(filtersActive.map(filter => filter.previousElementSibling.textContent));
+    filterAllSkins(filtersActive.map(filter =>
+      filter.previousElementSibling.textContent));
   };
 
   const changeLabelColor = e => e.target.classList.toggle('active');

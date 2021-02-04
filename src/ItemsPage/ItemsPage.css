@@ -79,10 +79,16 @@ button {
 
 label {
   z-index: 10;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
-.active {
-  background: red;
+label:hover {
+  color: rgb(0, 174, 255);
+}
+
+label.active {
+  background: black;
 }
 
 .btn-filters button {
