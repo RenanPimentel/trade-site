@@ -1,0 +1,7 @@
+.cart-item-content {
+  display: none;
+}
+
+.cart.active .cart-item-content {
+  display: block;
+}

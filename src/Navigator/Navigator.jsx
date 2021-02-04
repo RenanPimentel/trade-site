@@ -3,9 +3,7 @@ import './Navigator.css';
 import NavigatorItem from '../NavigatorItem/NavigatorItem';
 import Cart from '../Cart/Cart';
 
-function Navigator({ items }) {
-  const cartItems = {  };
-
+function Navigator({ items, ...props }) {
   return (
     <nav className="navigator">
       <div className="logo">
@@ -14,7 +12,7 @@ function Navigator({ items }) {
       <div className="nav-items">
         {items.map((item, index) => <NavigatorItem {...item} key={index}/>)}
       </div>
-      <Cart cartItems={cartItems} />
+      <Cart {...props} />
     </nav>
   );
 }
