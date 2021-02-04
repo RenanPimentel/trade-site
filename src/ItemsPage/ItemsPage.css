@@ -3,17 +3,24 @@
   align-items: center;
   flex-direction: column;
   margin: 2px;
-}
-
-.trade-item p {
-  text-align: center;
-  height: 2rem;
-}
-
-.trade-item {
   background: white;
   border-radius: 20px;
-  max-width: fit-content;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  transition: all 0.4s cubic-bezier(0.165, 1.84, 0.44, 1);
+}
+
+.trade-item img {
+  transition: all 0.4s cubic-bezier(0.15, 2.8, 1, 1);
+  border-radius: 20px;
+}
+
+.trade-item:hover img {
+  transform: scale(1.1);
+}
+
+.trade-item:hover {
+  background: #424651;
 }
 
 .wrapper {
@@ -64,6 +71,16 @@ button {
 
 .btn-filters button {
   cursor: pointer;
+  transition: all 0.1s ease;
+  outline: none;
+}
+
+.btn-filters button:hover {
+  background: #aaa;
+}
+
+.btn-filters button:active {
+  transform: scale(1.1);
 }
 
 #root {
