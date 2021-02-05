@@ -25,7 +25,7 @@ function App() {
     cart.push(itemsJson.find(item => item.name === name));
     setCart([...cart]);
   };
-    
+  
   const filterSkins = input => {
     setSkins(itemsJson
       .filter(({ name, category }) => 
@@ -44,7 +44,8 @@ function App() {
         <div className="item">
           <p className="item-name" style={{ display: 'none' }}
             dangerouslySetInnerHTML={{ __html: input 
-              ? name.replace(input, `<span style="background: yellow">${input}</span>`)
+              ? name.replace(input,
+                `<span style="background: yellow">${input}</span>`)
               : name }}>
           </p>
         </div>
@@ -56,7 +57,12 @@ function App() {
   return (
     <>
       <Navigator cart={cart} setCart={setCart} {...pageContainerProps} />
-      <PageContainer {...pageContainerProps} sentToCart={sentToCart} setSkins={setSkins} addToCart={addToCart} />
+      <PageContainer 
+        {...pageContainerProps}
+        sentToCart={sentToCart}
+        setSkins={setSkins}
+        addToCart={addToCart}
+      />
     </>
   );
 }

@@ -1,9 +1,8 @@
 import './ItemsPage.css';
 import { useState, useEffect } from 'react';
 
-import itemsFromJson from '../items.json';
-const itemsJson = itemsFromJson
-  .sort((a, b) => a.category > b.category ? 1 : -1);
+import itemsJsonArq from '../items.json';
+const itemsJson = itemsJsonArq.sort((a, b) => a.category > b.category ? 1 : -1);
 
 function ItemsPage({ skins, setSkins, addToCart, sentToCart }) {
   const [inputValue, setInputValue] = useState('');
@@ -73,12 +72,12 @@ function ItemsPage({ skins, setSkins, addToCart, sentToCart }) {
 
     setSkins(
       itemsJson
-      .filter(item => item.name.includes(inputValue) 
-        || item.category.includes(inputValue))
+      .filter(item => item.name.includes(inputValue.toLowerCase())
+        || item.category.includes(inputValue.toLowerCase()))
       .filter(item => values.includes(item.name)
         || values.includes(item.category))
       .map(({ name, img, category }, index) =>
-        <div 
+        <div
           key={index}
           className="trade-item" 
           onClick={() => sentToCart(name)}
@@ -113,14 +112,17 @@ function ItemsPage({ skins, setSkins, addToCart, sentToCart }) {
   
   return (
     <div className="container-item">
-      <h1 id="itens">Itens</h1>
       <div className="filters">
-        <input
-          placeholder="ache sua skin!"
-          type="text"
-          value={inputValue}
-          onChange={e => setInputValue(e.target.value)}
-        />
+        <div id="itens" className="input-container">
+          <img id="glass" src="https://cdn.discordapp.com/attachments/805910584369217536/806984770928115782/lupa2.png"/>
+          <input
+            placeholder="Pesquisar"
+            type="text"
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
+          />
+          <div className="input-line"></div>
+        </div>
         <div className="btn-filters">
           {categories.map((item, index) =>
             <div key={index}>

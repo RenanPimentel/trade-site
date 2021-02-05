@@ -18,13 +18,6 @@
   font-size: 2rem;
 }
 
-.container-item input {
-  outline: none;
-  width: 30%;
-  min-width: 20rem;
-  color: black;
-}
-
 .item-name {
   color: black;
 }
@@ -34,7 +27,8 @@
   margin: 0 5rem;
   padding-top: 2rem;
   border-radius: 2.5rem;
-  background: #4e5562;
+  background: #424651;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .4);
 }
 
 #sobre-nós p {

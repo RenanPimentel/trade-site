@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 2px;
-  background: white;
-  border-radius: 10px;
+  margin: .3rem;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
   padding: 1px;
   /* justify-content: center; */
-  /* padding-bottom: .5rem; */
+  padding-bottom: 1.5rem;
   transition: all 0.4s ease;
 }
 
@@ -22,19 +22,14 @@ input[type="checkbox"] {
 }
 
 .trade-item img {
-  transition: all 0.4s ease;
-  border-radius: 10px;
-}
-
-.trade-item:hover {
-  background: #ccc;
+  transition: all 0.2s ease-out;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   margin: 1.5rem;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
@@ -42,19 +37,23 @@ input[type="checkbox"] {
 .wrapper p {
   text-align: center;
   flex: 1;
+  max-height: 10px;
 }
 
-.container-item img {
-  width: 5.5rem;
-  /* height: 6.5rem; */
-  cursor: pointer;
+.trade-item img {
+  width: 8rem;
+  height: 8rem;
 }
 
-.container-item input {
+.input-container input {
   border: none;
-  border-bottom: 1px solid white;
-  color: white;
+  color: #7b829a;
   background: transparent;
+  margin-left: 10px;
+}
+
+.input-container input::placeholder {
+  color: #7b829a;
 }
 
 button {
@@ -65,11 +64,54 @@ button {
   border-radius: 10px;
 }
 
+.btn-filters label:last-child,
+.btn-filters div:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
 .filters {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+@media(max-width: 1000px) {
+  .filters {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #7b829a;
+}
+
+#glass {
+  width: 1rem;
+  margin-right: 10px;
+  margin-bottom: 2.12rem;
+  transform: rotate(-90deg);
+}
+
+.filters input, .filters label {
+  margin-bottom: 2rem;
 }
 
 .btn-filters {
@@ -78,6 +120,7 @@ button {
 }
 
 label {
+  width: min-content;
   z-index: 10;
   cursor: pointer;
   transition: all 0.2s ease-out;
@@ -99,6 +142,11 @@ label.active {
 
 .btn-filters button:hover {
   background: #aaa;
+}
+
+.input-container input {
+  outline: none;
+  min-width: 12rem;
 }
 
 .btn-filters button:active {
