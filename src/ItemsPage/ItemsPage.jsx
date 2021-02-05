@@ -138,7 +138,7 @@ function ItemsPage({ skins, setSkins, addToCart, sentToCart }) {
             </div>)}
         </div>
       </div>
-      <div className="wrapper">
+      <div className="wrapper items-wrapper">
         {skins?.length
           ? skins
           : <p style={{ color: 'red' }}>Desculpe! não vendemos esse item.</p>}
