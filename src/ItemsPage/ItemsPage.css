@@ -5,7 +5,6 @@
   margin: .3rem;
   cursor: pointer;
   box-shadow: 0 0 5px black;
-  /* padding: 1px; */
   transition: all 0.4s ease;
 }
 
@@ -103,14 +102,22 @@ button {
   }
   .container {
     max-width: 50rem;
-    min-width: 30rem;
+    min-width: 25rem !important;
     margin: 2rem;
   }
 }
 
-@media(max-width: 813px) {
+@media(max-width: 872px) {
   .container {
     margin: 0;
+  }
+
+  .cart button {
+    margin: 0;
+  }
+
+  .cart.active .arrow {
+    margin-left: 1.1rem;
   }
 }
 

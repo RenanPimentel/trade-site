@@ -1,0 +1,19 @@
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.cart-item button {
+  padding: 10px;
+  font-size: 10px;
+}
+
+.cart-item-separator {
+  background: white;
+  width: 90%;
+  height: 2px;
+}
